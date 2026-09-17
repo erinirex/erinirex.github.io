@@ -40,8 +40,9 @@
           <div class="socials">
             {% if p.email != empty %}<a class="email-link" href="mailto:{{ p.email | escape }}">
   {{ p.email | replace: '.', ' dot ' | replace: '@', ' at ' | escape }}
-</a>{% endif %}
-            <a href="{{ p.github | escape }}">GitHub <span aria-hidden="true">↗</span></a>
+</a>{% endif %} / 
+            <a href="{{ p.github | escape }}">GitHub <span aria-hidden="true">↗</span></a> /
+            <a href="{{ p.x | escape }}">X (Twitter) <span aria-hidden="true">↗</span></a> /
             {% if p.scholar != empty %}<a href="{{ p.scholar | escape }}">Google Scholar <span aria-hidden="true">↗</span></a>{% endif %}
             {% if p.cv != empty %}<a href="{{ p.cv | relative_url }}">CV <span aria-hidden="true">↗</span></a>{% endif %}
           </div>
