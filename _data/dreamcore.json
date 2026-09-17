@@ -2,13 +2,13 @@
   "name": "Shujun Xia",
   "subtitle": "You can call me Erin.",
   "description": "Shujun Xia (Erin), a senior studying Computer Science at Columbia University.",
-  "eyebrow": "PERSONAL SPACE / ALWAYS BECOMING",
+  "eyebrow": "PERSONAL SPACE",
   "intro": "I'm a senior at Columbia University studying Computer Science. Welcome to my little corner of the internet.",
   "about": "I'm Shujun Xia, also known as Erin. I'm currently a senior studying Computer Science at Columbia University. This space brings together my work, ideas, and the things I'm exploring along the way.",
   "interests": ["Columbia University", "Computer Science", "Senior"],
-  "email": "",
+  "email": "sx2394@columbia.edu",
   "github": "https://github.com/erinirex",
-  "scholar": "",
+  "scholar": "https://scholar.google.com/citations?user=PMMqk48AAAAJ",
   "cv": "",
   "portrait": "images/photo_square.jpg",
   "portrait_alt": "Shujun Xia (Erin)",
@@ -18,7 +18,19 @@
     {
       "date": "Present",
       "school": "Columbia University",
-      "detail": "Senior · Computer Science"
+      "detail": "Senior · Computer Science · Expect to graduate 2027/05"
+    }
+  ],
+  "awards": [
+    {
+      "date": "2026",
+      "title": "Ward H. Dennis Scholarship",
+      "detail": "Columbia University"
+    },
+    {
+      "date": "2025",
+      "title": "ICCV Broadening Participation Travel Grant",
+      "detail": "ICCV 2025"
     }
   ],
   "closing": "Somewhere between a thought and a dream.",

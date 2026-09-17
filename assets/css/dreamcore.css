@@ -817,16 +817,52 @@ h1 {
   scroll-margin-top: 35px;
 }
 
-@media (max-width: 800px) {
+.publication-list .paper {
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 24px;
+}
+
+.publication-list .paper > img {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+}
+
+.visitor-map {
+  width: 220px;
+  max-width: 100%;
+  justify-self: center;
+}
+
+.visitor-widget {
+  width: 100%;
+  max-width: 220px;
+}
+
+.visitor-widget img,
+.visitor-widget canvas,
+.visitor-widget iframe {
+  display: block;
+  max-width: 100% !important;
+}
+
+.visitor-widget img,
+.visitor-widget canvas {
+  height: auto !important;
+}
+
+@media (max-width: 900px) {
   .publication-list .paper {
     grid-template-columns: 1fr;
     gap: 18px;
   }
 
   .publication-list .paper > img {
-    width: 100%;
-    max-width: 300px;
-    max-height: 190px;
+    width: 220px;
+    max-width: 100%;
+    max-height: none;
   }
 }
 
