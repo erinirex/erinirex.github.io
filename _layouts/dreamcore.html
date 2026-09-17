@@ -1,0 +1,79 @@
+<!doctype html>
+{% assign p = site.data.dreamcore %}
+{% assign selected = site.publications | where: 'dreamcore', true | sort: 'date' | reverse %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ p.name | escape }} · Personal space</title>
+  <meta name="description" content="{{ p.description | escape }}">
+  <meta name="theme-color" content="#e8edf3">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/dreamcore.css' | relative_url }}">
+  <script src="{{ '/assets/js/dreamcore.js' | relative_url }}" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="page-shell">
+    <header class="header">
+      <a class="wordmark" href="#home" aria-label="Back to top"><span aria-hidden="true">✳</span> {{ p.name | escape }}<i> / home</i></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a><a href="#research">Research</a><a href="#work">Work</a><a href="#contact">Contact</a>
+      </nav>
+      <button class="dream-toggle" type="button" aria-pressed="false" aria-label="Switch to dusk palette"><span aria-hidden="true">☾</span><span class="mode-label">Dusk</span></button>
+    </header>
+    <main id="main">
+      <section class="hero" id="home" aria-labelledby="name">
+        <div class="hero-copy">
+          <p class="eyebrow">{{ p.eyebrow | escape }}</p>
+          <h1 id="name">{{ p.name | escape }}<span class="name-star" aria-hidden="true">✧</span></h1>
+          <p class="subtitle">{{ p.subtitle | escape }}</p>
+          <p class="intro">{{ p.intro | escape }}</p>
+          <div class="socials">
+            {% if p.email != empty %}<a href="mailto:{{ p.email | escape }}">Email <span aria-hidden="true">↗</span></a>{% endif %}
+            <a href="{{ p.github | escape }}">GitHub <span aria-hidden="true">↗</span></a>
+            {% if p.scholar != empty %}<a href="{{ p.scholar | escape }}">Scholar <span aria-hidden="true">↗</span></a>{% endif %}
+            {% if p.cv != empty %}<a href="{{ p.cv | relative_url }}">CV <span aria-hidden="true">↗</span></a>{% endif %}
+          </div>
+        </div>
+        <figure class="dream-figure">
+          <div class="dream-window" role="img" aria-label="An open doorway floating above a checkerboard floor, in a soft blue dream sky">
+            <div class="orb"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><div class="horizon"></div><div class="floor"></div><div class="doorway"><div class="door-light"></div><div class="door"></div></div><span class="scene-star star-one">✧</span><span class="scene-star star-two">✦</span>
+            {% if p.portrait != empty %}<img class="portrait" src="{{ p.portrait | relative_url }}" alt="{{ p.portrait_alt | escape }}" width="180" height="220">{% endif %}
+          </div>
+          <figcaption><span>FIG. 01 — A PLACE BETWEEN</span><span aria-hidden="true">✧</span></figcaption>
+        </figure>
+      </section>
+      <div class="interlude" aria-hidden="true"><span>STAY CURIOUS</span><span class="interlude-line"></span><i>there is more than meets the eye.</i></div>
+      <section id="about" class="content-section">
+        <div class="section-heading"><p class="eyebrow">01 / A LITTLE CONTEXT</p><h2>About me</h2></div>
+        <div class="section-body"><p class="about-text">{{ p.about | escape }}</p><ul class="tags" aria-label="Interests">{% for interest in p.interests %}<li>{{ interest | escape }}</li>{% endfor %}</ul></div>
+      </section>
+      <section id="research" class="content-section">
+        <div class="section-heading"><p class="eyebrow">02 / OPEN QUESTIONS</p><h2>Research &<br> <em>curiosity.</em></h2></div>
+        <div class="section-body research-grid">{% for item in p.research %}<article class="research-item"><span class="item-number">0{{ forloop.index }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.text | escape }}</p></article>{% else %}<div class="research-empty"><h3>Room for open questions.</h3><p>Research interests and current explorations will appear here.</p></div>{% endfor %}</div>
+      </section>
+      <section id="work" class="content-section">
+        <div class="section-heading"><p class="eyebrow">03 / SELECTED WORK</p><h2>Things taking<br> <em>shape.</em></h2></div>
+        <div class="section-body">
+          {% if selected.size > 0 %}
+            {% for paper in selected %}<article class="paper">
+              {% if paper.teaser %}<img src="{{ paper.teaser | relative_url }}" alt="{{ paper.teaser_alt | default: paper.title | escape }}" loading="lazy">{% endif %}
+              <div><p class="eyebrow">{{ paper.venue | escape }}{% if paper.date %} · {{ paper.date | date: '%Y' }}{% endif %}</p><h3><a href="{{ paper.url | relative_url }}">{{ paper.title | escape }}</a></h3>{% if paper.authors %}<p>{{ paper.authors | escape }}</p>{% endif %}<div class="paper-links">{% if paper.paperurl %}<a href="{{ paper.paperurl | escape }}">Paper ↗</a>{% endif %}{% if paper.codeurl %}<a href="{{ paper.codeurl | escape }}">Code ↗</a>{% endif %}{% if paper.projecturl %}<a href="{{ paper.projecturl | escape }}">Project ↗</a>{% endif %}</div></div>
+            </article>{% endfor %}
+          {% else %}<div class="empty-work"><span class="empty-star" aria-hidden="true">✧</span><div><h3>A little room for what comes next.</h3><p>Selected projects and publications will find a home here.</p><a href="{{ p.github | escape }}">Explore my GitHub <span aria-hidden="true">↗</span></a></div></div>{% endif %}
+        </div>
+      </section>
+      {% if p.news.size > 0 %}<section class="content-section" id="news"><div class="section-heading"><p class="eyebrow">FIELD NOTES</p><h2>Recently</h2></div><ul class="section-body timeline">{% for item in p.news %}<li><time>{{ item.date | escape }}</time><p>{{ item.text | escape }}{% if item.url %} <a href="{{ item.url | relative_url }}">Read more ↗</a>{% endif %}</p></li>{% endfor %}</ul></section>{% endif %}
+      {% if p.education.size > 0 %}<section class="content-section" id="education"><div class="section-heading"><p class="eyebrow">ALONG THE WAY</p><h2>Education</h2></div><ul class="section-body timeline">{% for item in p.education %}<li><time>{{ item.date | escape }}</time><div><h3>{{ item.school | escape }}</h3><p>{{ item.detail | escape }}</p></div></li>{% endfor %}</ul></section>{% endif %}
+      <section id="contact" class="contact"><p class="eyebrow">LEAVE A TRACE</p><h2>Every conversation<br>starts with <em>hello.</em></h2><p>For shared questions, new ideas, or a simple hello.</p>{% if p.email != empty %}<a class="contact-link" href="mailto:{{ p.email | escape }}">{{ p.email | escape }} ↗</a>{% else %}<a class="contact-link" href="{{ p.github | escape }}">Find me on GitHub ↗</a>{% endif %}<span class="contact-star" aria-hidden="true">✳</span></section>
+    </main>
+    <footer><span>© {{ site.time | date: '%Y' }} {{ p.name | escape }}</span><i>{{ p.footer | escape }}</i><a href="#home">Back to the sky ↑</a></footer>
+  </div>
+</body>
+</html>
+
