@@ -42,7 +42,7 @@
   {{ p.email | replace: '.', ' dot ' | replace: '@', ' at ' | escape }}
 </a>{% endif %}
             <a href="{{ p.github | escape }}">GitHub <span aria-hidden="true">↗</span></a>
-            {% if p.scholar != empty %}<a href="{{ p.scholar | escape }}">Scholar <span aria-hidden="true">↗</span></a>{% endif %}
+            {% if p.scholar != empty %}<a href="{{ p.scholar | escape }}">Google Scholar <span aria-hidden="true">↗</span></a>{% endif %}
             {% if p.cv != empty %}<a href="{{ p.cv | relative_url }}">CV <span aria-hidden="true">↗</span></a>{% endif %}
           </div>
         </div>
@@ -59,11 +59,18 @@
 
       <ul class="section-body news-list">
         <li>
+          <time datetime="2026-08">2026 / 08</time>
+          <p>
+            Our survey on efficient diffusion LLMs has been accepted to
+            <strong>EMNLP Findings 2026</strong>!
+          </p>
+        </li>
+        <li>
           <time datetime="2026-04">2026 / 04</time>
           <p>
             MedREK has been accepted to
             <strong>ICML 2026 Main Conference</strong>!
-            What a long journey 😴 See you in Seoul!
+            What a long journey 😴
           </p>
         </li>
 
@@ -131,8 +138,8 @@
       </section>
       <section id="publication" class="content-section">
       <div class="section-heading">
-        <p class="eyebrow">02 / SELECTED WORK</p>
-        <h2>Publication</h2>
+        <p class="eyebrow">02 / SELECTED WORKS</p>
+        <h2>Publications</h2>
       </div>
 
       <div class="section-body publication-list">
@@ -265,7 +272,7 @@
       <div class="visitor-map">
         {% capture visitor_embed %}{% include dreamcore-visitors.html %}{% endcapture %}
         {% assign visitor_embed = visitor_embed | strip %}
-        {% if visitor_embed != empty %}<div class="visitor-widget">{{ visitor_embed }}</div><p class="visitor-note">Location estimates and visit counts are provided by the visitor map service.</p>{% else %}<p class="empty-copy">Visitor statistics are not available yet.</p>{% endif %}
+        {% if visitor_embed != empty %}<div class="visitor-widget">{{ visitor_embed }}</div><p class="visitor-note"></p>{% else %}<p class="empty-copy">Visitor statistics are not available yet.</p>{% endif %}
       </div>
     </aside>
     <footer><span>© {{ site.time | date: '%Y' }} {{ p.name | escape }}</span><i>{{ p.footer | escape }}</i><a href="#home">Back to the sky ↑</a></footer>
