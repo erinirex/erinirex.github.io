@@ -873,3 +873,57 @@ h1 {
     padding-bottom: 22px;
   }
 }
+
+.portrait-area .portrait,
+.portrait-area .portrait-placeholder {
+  width: 250px;
+  height: 250px;
+}
+
+@media (max-width: 650px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 90px;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .hero-copy {
+    min-width: 0;
+  }
+
+  .portrait-area {
+    padding-top: 36px;
+  }
+
+  .portrait-area .portrait,
+  .portrait-area .portrait-placeholder {
+    width: 90px;
+    height: 90px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 8vw, 48px);
+    letter-spacing: -1px;
+  }
+
+  .hero .name-star {
+    font-size: 20px;
+  }
+
+  .hero .subtitle {
+    font-size: 21px;
+  }
+
+  .hero .intro {
+    font-size: 17px;
+  }
+
+  .hero .socials {
+    flex-wrap: wrap;
+    gap: 10px 16px;
+  }
+
+  .hero .socials a {
+    overflow-wrap: anywhere;
+  }
+}
