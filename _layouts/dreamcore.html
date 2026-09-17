@@ -32,6 +32,9 @@
     </header>
     <main id="main">
       <section class="hero" id="home" aria-labelledby="name">
+        <div class="portrait-area">
+          {% if p.portrait and p.portrait != empty %}<img class="portrait" src="{{ p.portrait | relative_url }}" alt="{{ p.portrait_alt | escape }}" width="300" height="300" fetchpriority="high">{% else %}<div class="portrait-placeholder" role="img" aria-label="Portrait not yet added">SX</div>{% endif %}
+        </div>
         <div class="hero-copy">
           <p class="eyebrow">{{ p.eyebrow | escape }}</p>
           <h2 id="name">{{ p.name | escape }}<span class="name-star" aria-hidden="true">✧</span></h2>
@@ -47,9 +50,7 @@
             {% if p.cv != empty %}<a href="{{ p.cv | relative_url }}">CV <span aria-hidden="true">↗</span></a>{% endif %}
           </div>
         </div>
-        <div class="portrait-area">
-          {% if p.portrait and p.portrait != empty %}<img class="portrait" src="{{ p.portrait | relative_url }}" alt="{{ p.portrait_alt | escape }}" width="300" height="300" fetchpriority="high">{% else %}<div class="portrait-placeholder" role="img" aria-label="Portrait not yet added">SX</div>{% endif %}
-        </div>
+        
       </section>
       <section id="news" class="content-section">
       <div class="section-heading">
@@ -176,6 +177,9 @@
             <div class="paper-links">
               <a href="https://icml.cc/virtual/2026/poster/63433">
                 Paper ↗
+              </a>
+              <a href="https://github.com/erinirex/MedREK">
+                Code ↗
               </a>
             </div>
           </div>
