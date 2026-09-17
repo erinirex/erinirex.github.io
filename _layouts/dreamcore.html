@@ -26,7 +26,7 @@
     <header class="header">
       <a class="wordmark" href="#home" aria-label="Back to top"><span aria-hidden="true">🍧</span> {{ p.name | escape }}<i> / home</i></a>
       <nav aria-label="Main navigation">
-        <a href="#news">News</a><a href="#education">Education</a><a href="#awards">Awards</a><a href="#publication">Publication</a><a href="#experience">Experience</a><a href="#service">Service</a><a href="#misc">Misc</a>
+        <a href="#news">News</a><a href="#education">Education</a><a href="#publication">Publication</a><a href="#awards">Awards</a><a href="#experience">Experience</a><a href="#service">Service</a><a href="#misc">Misc</a>
       </nav>
       <button class="dream-toggle" type="button" aria-pressed="false" aria-label="Switch to dusk palette"><span aria-hidden="true">☾</span><span class="mode-label">Dusk</span></button>
     </header>
@@ -117,26 +117,7 @@
         <div class="section-heading"><p class="eyebrow">ALONG THE WAY</p><h2>Education</h2></div>
         <ul class="section-body timeline">{% for item in p.education %}<li><span class="entry-date">{{ item.date | escape }}</span><div><h3>{{ item.school | escape }}</h3><p>{{ item.detail | escape }}</p></div></li>{% else %}<li><p class="empty-copy">Education details coming soon.</p></li>{% endfor %}</ul>
       </section>
-      <section id="awards" class="content-section">
-        <div class="section-heading">
-          <p class="eyebrow">HONORS & RECOGNITION</p>
-          <h2>Awards</h2>
-        </div>
-
-        <ul class="section-body timeline">
-          {% for award in p.awards %}
-          <li>
-            <span class="entry-date">{{ award.date | escape }}</span>
-            <div>
-              <h3>{{ award.title | escape }}</h3>
-              {% if award.detail and award.detail != empty %}
-              <p>{{ award.detail | escape }}</p>
-              {% endif %}
-            </div>
-          </li>
-          {% endfor %}
-        </ul>
-      </section>
+      
       <section id="publication" class="content-section">
       <div class="section-heading">
         <p class="eyebrow">SELECTED WORKS</p>
@@ -257,6 +238,27 @@
         </article>
       </div>
     </section>
+
+    <section id="awards" class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow">HONORS & RECOGNITION</p>
+          <h2>Awards</h2>
+        </div>
+
+        <ul class="section-body timeline">
+          {% for award in p.awards %}
+          <li>
+            <span class="entry-date">{{ award.date | escape }}</span>
+            <div>
+              <h3>{{ award.title | escape }}</h3>
+              {% if award.detail and award.detail != empty %}
+              <p>{{ award.detail | escape }}</p>
+              {% endif %}
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
      
       <section id="experience" class="content-section">
         <div class="section-heading"><p class="eyebrow">LEARNING BY DOING</p><h2>Experience</h2></div>
