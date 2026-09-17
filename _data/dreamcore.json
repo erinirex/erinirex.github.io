@@ -37,5 +37,16 @@
   "footer": "Made of curiosity & a little daydreaming.",
   "experience": [],
   "service": [],
-  "misc": []
+  "misc": [
+    {
+      "title": "my little airport",
+      "text": "My favorite indie pop band. I miss the time when I went to their live in Hong Kong.",
+      "url": "https://open.spotify.com/artist/3yfDRplDZh03Y0fEeCd6B0"
+    },
+    {
+      "title": "Cheer Chen",
+      "text": "My favorite artist. Always on repeat.",
+      "url": "https://open.spotify.com/artist/4m0xrEWYU0yCUFMaga015T"
+    }
+  ]
 }
