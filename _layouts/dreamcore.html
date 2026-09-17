@@ -51,7 +51,6 @@
           {% if p.portrait and p.portrait != empty %}<img class="portrait" src="{{ p.portrait | relative_url }}" alt="{{ p.portrait_alt | escape }}" width="300" height="300" fetchpriority="high">{% else %}<div class="portrait-placeholder" role="img" aria-label="Portrait not yet added">SX</div>{% endif %}
         </div>
       </section>
-      <div class="interlude" aria-hidden="true"><span>STAY CURIOUS</span><span class="interlude-line"></span><i>there is more than meets the eye.</i></div>
       <section id="news" class="content-section">
       <div class="section-heading">
         <p class="eyebrow">LATEST UPDATES</p>
@@ -114,7 +113,7 @@
       </ul>
     </section>
       <section id="education" class="content-section">
-        <div class="section-heading"><p class="eyebrow">01 / ALONG THE WAY</p><h2>Education</h2></div>
+        <div class="section-heading"><p class="eyebrow">ALONG THE WAY</p><h2>Education</h2></div>
         <ul class="section-body timeline">{% for item in p.education %}<li><span class="entry-date">{{ item.date | escape }}</span><div><h3>{{ item.school | escape }}</h3><p>{{ item.detail | escape }}</p></div></li>{% else %}<li><p class="empty-copy">Education details coming soon.</p></li>{% endfor %}</ul>
       </section>
       <section id="awards" class="content-section">
@@ -139,7 +138,7 @@
       </section>
       <section id="publication" class="content-section">
       <div class="section-heading">
-        <p class="eyebrow">02 / SELECTED WORKS</p>
+        <p class="eyebrow">SELECTED WORKS</p>
         <h2>Publications</h2>
       </div>
 
@@ -256,15 +255,15 @@
     </section>
      
       <section id="experience" class="content-section">
-        <div class="section-heading"><p class="eyebrow">03 / LEARNING BY DOING</p><h2>Experience</h2></div>
+        <div class="section-heading"><p class="eyebrow">LEARNING BY DOING</p><h2>Experience</h2></div>
         <div class="section-body">{% for item in p.experience %}<article class="experience-entry"><span class="entry-date">{{ item.date | escape }}</span><div><h3>{{ item.role | escape }}</h3><p class="organization">{% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.organization | escape }}</a>{% else %}{{ item.organization | escape }}{% endif %}</p><p>{{ item.detail | escape }}</p></div></article>{% else %}<p class="empty-copy">More to share soon.</p>{% endfor %}</div>
       </section>
       <section id="service" class="content-section">
-        <div class="section-heading"><p class="eyebrow">04 / GIVING BACK</p><h2>Service</h2></div>
+        <div class="section-heading"><p class="eyebrow">GIVING BACK</p><h2>Service</h2></div>
         <div class="section-body">{% for item in p.service %}<article class="service-entry"><span class="entry-date">{{ item.date | escape }}</span><div><h3>{% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>{% else %}{{ item.title | escape }}{% endif %}</h3><p>{{ item.detail | escape }}</p></div></article>{% else %}<p class="empty-copy">More to share soon.</p>{% endfor %}</div>
       </section>
       <section id="misc" class="content-section">
-        <div class="section-heading"><p class="eyebrow">05 / OUTSIDE THE LINES</p><h2>Misc</h2></div>
+        <div class="section-heading"><p class="eyebrow">OUTSIDE THE LINES</p><h2>Misc</h2></div>
         <div class="section-body">{% for item in p.misc %}<article class="misc-entry"><h3>{% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>{% else %}{{ item.title | escape }}{% endif %}</h3><p>{{ item.text | escape }}</p></article>{% else %}<p class="empty-copy">A little space for life beyond computer science. More soon.</p>{% endfor %}</div>
       </section>
     </main>
