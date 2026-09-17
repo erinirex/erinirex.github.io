@@ -22,7 +22,7 @@
     <header class="header">
       <a class="wordmark" href="#home" aria-label="Back to top"><span aria-hidden="true">✳</span> {{ p.name | escape }}<i> / home</i></a>
       <nav aria-label="Main navigation">
-        <a href="#education">Education</a><a href="#publication">Publication</a><a href="#experience">Experience</a><a href="#service">Service</a><a href="#misc">Misc</a>
+        <a href="#news">News</a><a href="#education">Education</a><a href="#publication">Publication</a><a href="#experience">Experience</a><a href="#service">Service</a><a href="#misc">Misc</a>
       </nav>
       <button class="dream-toggle" type="button" aria-pressed="false" aria-label="Switch to dusk palette"><span aria-hidden="true">☾</span><span class="mode-label">Dusk</span></button>
     </header>
@@ -45,21 +45,181 @@
         </div>
       </section>
       <div class="interlude" aria-hidden="true"><span>STAY CURIOUS</span><span class="interlude-line"></span><i>there is more than meets the eye.</i></div>
+      <section id="news" class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">LATEST UPDATES</p>
+        <h2>News</h2>
+      </div>
+
+      <ul class="section-body news-list">
+        <li>
+          <time datetime="2026-04">2026 / 04</time>
+          <p>
+            MedREK has been accepted to
+            <strong>ICML 2026 Main Conference</strong>!
+            What a long journey 😴 See you in Seoul!
+          </p>
+        </li>
+
+        <li>
+          <time datetime="2026-01">2026 / 01</time>
+          <p>
+            Our
+            <a href="#efficient-diffusion-llm-survey">
+              survey on efficient diffusion LLMs
+            </a>
+            is out!
+          </p>
+        </li>
+
+        <li>
+          <time datetime="2025-11">2025 / 11</time>
+          <p>
+            MedREK has been accepted to
+            <strong>ResponsibleFM@NeurIPS 2025</strong>!
+            Huge thanks to all my coauthors.
+          </p>
+        </li>
+
+        <li>
+          <time datetime="2025-09">2025 / 09</time>
+          <p>
+            Awarded the
+            <strong>ICCV Broadening Participation Travel Grant</strong>.
+            See you in Hawaii!
+          </p>
+        </li>
+
+        <li>
+          <time datetime="2025-07">2025 / 07</time>
+          <p>
+            My first paper accepted to
+            <strong>eXCV@ICCV 2025 Proceedings</strong>!
+          </p>
+        </li>
+      </ul>
+    </section>
       <section id="education" class="content-section">
         <div class="section-heading"><p class="eyebrow">01 / ALONG THE WAY</p><h2>Education</h2></div>
         <ul class="section-body timeline">{% for item in p.education %}<li><span class="entry-date">{{ item.date | escape }}</span><div><h3>{{ item.school | escape }}</h3><p>{{ item.detail | escape }}</p></div></li>{% else %}<li><p class="empty-copy">Education details coming soon.</p></li>{% endfor %}</ul>
       </section>
       <section id="publication" class="content-section">
-        <div class="section-heading"><p class="eyebrow">02 / SELECTED WORK</p><h2>Publication</h2></div>
-        <div class="section-body">
-          {% if selected.size > 0 %}
-            {% for paper in selected %}<article class="paper">
-              {% if paper.teaser %}<img src="{{ paper.teaser | relative_url }}" alt="{{ paper.teaser_alt | default: paper.title | escape }}" loading="lazy">{% endif %}
-              <div><p class="eyebrow">{{ paper.venue | escape }}{% if paper.date %} · {{ paper.date | date: '%Y' }}{% endif %}</p><h3><a href="{{ paper.url | relative_url }}">{{ paper.title | escape }}</a></h3>{% if paper.authors %}<p>{{ paper.authors | escape }}</p>{% endif %}<div class="paper-links">{% if paper.paperurl %}<a href="{{ paper.paperurl | escape }}">Paper ↗</a>{% endif %}{% if paper.codeurl %}<a href="{{ paper.codeurl | escape }}">Code ↗</a>{% endif %}{% if paper.projecturl %}<a href="{{ paper.projecturl | escape }}">Project ↗</a>{% endif %}</div></div>
-            </article>{% endfor %}
-          {% else %}<div class="empty-work"><span class="empty-star" aria-hidden="true">✧</span><div><h3>A little room for what comes next.</h3><p>Selected projects and publications will find a home here.</p><a href="{{ p.github | escape }}">Explore my GitHub <span aria-hidden="true">↗</span></a></div></div>{% endif %}
-        </div>
-      </section>
+      <div class="section-heading">
+        <p class="eyebrow">02 / SELECTED WORK</p>
+        <h2>Publication</h2>
+      </div>
+
+      <div class="section-body publication-list">
+        <p class="publication-note">* Equal contribution.</p>
+
+        <article class="paper">
+          <img
+            src="{{ '/images/fig0_0925.png' | relative_url }}"
+            alt="Overview of the MedREK framework"
+            loading="lazy"
+          >
+
+          <div class="paper-content">
+            <span class="venue-tag">ICML 2026</span>
+
+            <h3>
+              <a href="https://icml.cc/virtual/2026/poster/63433">
+                MedREK: Retrieval-Based Editing for Medical LLMs
+                with Key-Aware Prompts
+              </a>
+            </h3>
+
+            <p class="paper-authors">
+              <strong>Shujun Xia</strong><sup>*</sup>,
+              Haokun Lin<sup>*</sup>, Yichen Wu, Yinan Zhou,
+              Zixuan Li, Zhongwei Wan, Xingrun Xing, Yefeng Zheng,
+              Xiang Li, Caifeng Shan, Zhenan Sun, Quanzheng Li
+            </p>
+
+            <p class="paper-venue">
+              <em>ICML Main Conference, 2026</em>
+            </p>
+
+            <div class="paper-links">
+              <a href="https://icml.cc/virtual/2026/poster/63433">
+                Conference ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="paper" id="efficient-diffusion-llm-survey">
+          <img
+            src="{{ '/images/taxonomy.png' | relative_url }}"
+            alt="Taxonomy of efficient diffusion language models"
+            loading="lazy"
+          >
+
+          <div class="paper-content">
+            <span class="venue-tag">Under Review · 2026</span>
+
+            <h3>
+              <a href="https://www.authorea.com/users/1021451/articles/1381451-efficient-diffusion-language-models-a-comprehensive-survey">
+                Efficient Diffusion Language Models:
+                A Comprehensive Survey
+              </a>
+            </h3>
+
+            <p class="paper-authors">
+              Haokun Lin<sup>*</sup>, Xinle Jia<sup>*</sup>,
+              Shaozhen Liu<sup>*</sup>,
+              <strong>Shujun Xia</strong><sup>*</sup>,
+              Weitao Huang, et al.
+            </p>
+
+            <p class="paper-venue">
+              <em>Under Review, 2026</em>
+            </p>
+
+            <div class="paper-links">
+              <a href="https://www.authorea.com/users/1021451/articles/1381451-efficient-diffusion-language-models-a-comprehensive-survey">
+                Paper ↗
+              </a>
+              <a href="https://github.com/FelixMessi/Awesome-Efficient-dLLMs">
+                GitHub ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="paper">
+          <img
+            src="{{ '/images/diffmap.png' | relative_url }}"
+            alt="Illustration of object detection explanations using difference maps"
+            loading="lazy"
+          >
+
+          <div class="paper-content">
+            <span class="venue-tag">eXCV@ICCV 2025</span>
+
+            <h3>
+              <a href="https://openaccess.thecvf.com/content/ICCV2025W/eXCV/html/Xia_Explaining_Object_Detection_Through_Difference_Map_ICCVW_2025_paper.html">
+                Explaining Object Detection Through Difference Map
+              </a>
+            </h3>
+
+            <p class="paper-authors">
+              <strong>Shujun Xia</strong>, Chenyang Zhao, Antoni Chan
+            </p>
+
+            <p class="paper-venue">
+              <em>ICCV eXCV Workshop (Proceedings Track), 2025</em>
+            </p>
+
+            <div class="paper-links">
+              <a href="https://openaccess.thecvf.com/content/ICCV2025W/eXCV/html/Xia_Explaining_Object_Detection_Through_Difference_Map_ICCVW_2025_paper.html">
+                Paper ↗
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
      
       <section id="experience" class="content-section">
         <div class="section-heading"><p class="eyebrow">03 / LEARNING BY DOING</p><h2>Experience</h2></div>
