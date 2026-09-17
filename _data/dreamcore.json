@@ -11,7 +11,7 @@
   "scholar": "",
   "cv": "",
   "portrait": "images/photo_square.jpg",
-  "portrait_alt": "Portrait of erinirex",
+  "portrait_alt": "Shujun Xia (Erin)",
   "research": [],
   "news": [],
   "education": [
@@ -22,5 +22,8 @@
     }
   ],
   "closing": "Somewhere between a thought and a dream.",
-  "footer": "Made of curiosity & a little daydreaming."
+  "footer": "Made of curiosity & a little daydreaming.",
+  "experience": [],
+  "service": [],
+  "misc": []
 }

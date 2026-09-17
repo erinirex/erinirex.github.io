@@ -22,7 +22,7 @@
     <header class="header">
       <a class="wordmark" href="#home" aria-label="Back to top"><span aria-hidden="true">✳</span> {{ p.name | escape }}<i> / home</i></a>
       <nav aria-label="Main navigation">
-        <a href="#about">About</a><a href="#research">Research</a><a href="#work">Work</a><a href="#contact">Contact</a>
+        <a href="#education">Education</a><a href="#publication">Publication</a><a href="#experience">Experience</a><a href="#service">Service</a><a href="#misc">Misc</a>
       </nav>
       <button class="dream-toggle" type="button" aria-pressed="false" aria-label="Switch to dusk palette"><span aria-hidden="true">☾</span><span class="mode-label">Dusk</span></button>
     </header>
@@ -40,25 +40,17 @@
             {% if p.cv != empty %}<a href="{{ p.cv | relative_url }}">CV <span aria-hidden="true">↗</span></a>{% endif %}
           </div>
         </div>
-        <figure class="dream-figure">
-          <div class="dream-window" role="img" aria-label="An open doorway floating above a checkerboard floor, in a soft blue dream sky">
-            <div class="orb"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div><div class="horizon"></div><div class="floor"></div><div class="doorway"><div class="door-light"></div><div class="door"></div></div><span class="scene-star star-one">✧</span><span class="scene-star star-two">✦</span>
-            {% if p.portrait != empty %}<img class="portrait" src="{{ p.portrait | relative_url }}" alt="{{ p.portrait_alt | escape }}" width="180" height="220">{% endif %}
-          </div>
-          <figcaption><span>FIG. 01 — A PLACE BETWEEN</span><span aria-hidden="true">✧</span></figcaption>
-        </figure>
+        <div class="portrait-area">
+          {% if p.portrait and p.portrait != empty %}<img class="portrait" src="{{ p.portrait | relative_url }}" alt="{{ p.portrait_alt | escape }}" width="300" height="300" fetchpriority="high">{% else %}<div class="portrait-placeholder" role="img" aria-label="Portrait not yet added">SX</div>{% endif %}
+        </div>
       </section>
       <div class="interlude" aria-hidden="true"><span>STAY CURIOUS</span><span class="interlude-line"></span><i>there is more than meets the eye.</i></div>
-      <section id="about" class="content-section">
-        <div class="section-heading"><p class="eyebrow">01 / A LITTLE CONTEXT</p><h2>About me</h2></div>
-        <div class="section-body"><p class="about-text">{{ p.about | escape }}</p><ul class="tags" aria-label="Interests">{% for interest in p.interests %}<li>{{ interest | escape }}</li>{% endfor %}</ul></div>
+      <section id="education" class="content-section">
+        <div class="section-heading"><p class="eyebrow">01 / ALONG THE WAY</p><h2>Education</h2></div>
+        <ul class="section-body timeline">{% for item in p.education %}<li><span class="entry-date">{{ item.date | escape }}</span><div><h3>{{ item.school | escape }}</h3><p>{{ item.detail | escape }}</p></div></li>{% else %}<li><p class="empty-copy">Education details coming soon.</p></li>{% endfor %}</ul>
       </section>
-      <section id="research" class="content-section">
-        <div class="section-heading"><p class="eyebrow">02 / OPEN QUESTIONS</p><h2>Research &<br> <em>curiosity.</em></h2></div>
-        <div class="section-body research-grid">{% for item in p.research %}<article class="research-item"><span class="item-number">0{{ forloop.index }}</span><h3>{{ item.title | escape }}</h3><p>{{ item.text | escape }}</p></article>{% else %}<div class="research-empty"><h3>Room for open questions.</h3><p>Research interests and current explorations will appear here.</p></div>{% endfor %}</div>
-      </section>
-      <section id="work" class="content-section">
-        <div class="section-heading"><p class="eyebrow">03 / SELECTED WORK</p><h2>Things taking<br> <em>shape.</em></h2></div>
+      <section id="publication" class="content-section">
+        <div class="section-heading"><p class="eyebrow">02 / SELECTED WORK</p><h2>Publication</h2></div>
         <div class="section-body">
           {% if selected.size > 0 %}
             {% for paper in selected %}<article class="paper">
@@ -68,10 +60,28 @@
           {% else %}<div class="empty-work"><span class="empty-star" aria-hidden="true">✧</span><div><h3>A little room for what comes next.</h3><p>Selected projects and publications will find a home here.</p><a href="{{ p.github | escape }}">Explore my GitHub <span aria-hidden="true">↗</span></a></div></div>{% endif %}
         </div>
       </section>
-      {% if p.news.size > 0 %}<section class="content-section" id="news"><div class="section-heading"><p class="eyebrow">FIELD NOTES</p><h2>Recently</h2></div><ul class="section-body timeline">{% for item in p.news %}<li><time>{{ item.date | escape }}</time><p>{{ item.text | escape }}{% if item.url %} <a href="{{ item.url | relative_url }}">Read more ↗</a>{% endif %}</p></li>{% endfor %}</ul></section>{% endif %}
-      {% if p.education.size > 0 %}<section class="content-section" id="education"><div class="section-heading"><p class="eyebrow">ALONG THE WAY</p><h2>Education</h2></div><ul class="section-body timeline">{% for item in p.education %}<li><time>{{ item.date | escape }}</time><div><h3>{{ item.school | escape }}</h3><p>{{ item.detail | escape }}</p></div></li>{% endfor %}</ul></section>{% endif %}
-      <section id="contact" class="contact"><p class="eyebrow">LEAVE A TRACE</p><h2>Every conversation<br>starts with <em>hello.</em></h2><p>For shared questions, new ideas, or a simple hello.</p>{% if p.email != empty %}<a class="contact-link" href="mailto:{{ p.email | escape }}">{{ p.email | escape }} ↗</a>{% else %}<a class="contact-link" href="{{ p.github | escape }}">Find me on GitHub ↗</a>{% endif %}<span class="contact-star" aria-hidden="true">✳</span></section>
+     
+      <section id="experience" class="content-section">
+        <div class="section-heading"><p class="eyebrow">03 / LEARNING BY DOING</p><h2>Experience</h2></div>
+        <div class="section-body">{% for item in p.experience %}<article class="experience-entry"><span class="entry-date">{{ item.date | escape }}</span><div><h3>{{ item.role | escape }}</h3><p class="organization">{% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.organization | escape }}</a>{% else %}{{ item.organization | escape }}{% endif %}</p><p>{{ item.detail | escape }}</p></div></article>{% else %}<p class="empty-copy">More to share soon.</p>{% endfor %}</div>
+      </section>
+      <section id="service" class="content-section">
+        <div class="section-heading"><p class="eyebrow">04 / GIVING BACK</p><h2>Service</h2></div>
+        <div class="section-body">{% for item in p.service %}<article class="service-entry"><span class="entry-date">{{ item.date | escape }}</span><div><h3>{% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>{% else %}{{ item.title | escape }}{% endif %}</h3><p>{{ item.detail | escape }}</p></div></article>{% else %}<p class="empty-copy">More to share soon.</p>{% endfor %}</div>
+      </section>
+      <section id="misc" class="content-section">
+        <div class="section-heading"><p class="eyebrow">05 / OUTSIDE THE LINES</p><h2>Misc</h2></div>
+        <div class="section-body">{% for item in p.misc %}<article class="misc-entry"><h3>{% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>{% else %}{{ item.title | escape }}{% endif %}</h3><p>{{ item.text | escape }}</p></article>{% else %}<p class="empty-copy">A little space for life beyond computer science. More soon.</p>{% endfor %}</div>
+      </section>
     </main>
+    <aside class="visitors" aria-labelledby="visitors-title">
+      <div><p class="eyebrow">FROM NEAR & FAR</p><h2 id="visitors-title">Visitors</h2><p class="visitor-caption">Visits and places around the world.</p></div>
+      <div class="visitor-map">
+        {% capture visitor_embed %}{% include dreamcore-visitors.html %}{% endcapture %}
+        {% assign visitor_embed = visitor_embed | strip %}
+        {% if visitor_embed != empty %}<div class="visitor-widget">{{ visitor_embed }}</div><p class="visitor-note">Location estimates and visit counts are provided by the visitor map service.</p>{% else %}<p class="empty-copy">Visitor statistics are not available yet.</p>{% endif %}
+      </div>
+    </aside>
     <footer><span>© {{ site.time | date: '%Y' }} {{ p.name | escape }}</span><i>{{ p.footer | escape }}</i><a href="#home">Back to the sky ↑</a></footer>
   </div>
 </body>
