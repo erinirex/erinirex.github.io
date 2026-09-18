@@ -40,6 +40,10 @@
           <h2 id="name">{{ p.name | escape }}<span class="name-star" aria-hidden="true">✧</span></h2>
           <p class="subtitle">{{ p.subtitle | escape }}</p>
           <p class="intro">{{ p.intro | escape }}</p>
+          <p class="intro">
+          <strong>Research interests.</strong>
+          My research interests include, but are not limited to, post-training of (M)LLMs, spatial reasoning in large multimodal models, and reinforcement learning.
+        </p>
           <div class="socials">
             {% if p.email != empty %}<a class="email-link" href="mailto:{{ p.email | escape }}">
   {{ p.email | replace: '.', ' dot ' | replace: '@', ' at ' | escape }}
