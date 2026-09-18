@@ -1152,3 +1152,11 @@ h1 {
 #news .news-list::-webkit-scrollbar-track {
   background: transparent;
 }
+
+.supervisor-note a {
+  color: var(--accent);
+}
+
+.supervisor-note a:hover {
+  text-decoration: underline;
+}
