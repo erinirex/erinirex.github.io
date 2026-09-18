@@ -1126,3 +1126,32 @@ h1 {
     gap: 18px;
   }
 }
+
+/* News：超出高度后滚动 */
+#news .news-list {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted) transparent;
+}
+
+/* Chrome、Safari、Edge 滚动条 */
+#news .news-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+#news .news-list::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 10px;
+}
+
+#news .news-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 键盘操作时显示焦点 */
+#news .news-list:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
