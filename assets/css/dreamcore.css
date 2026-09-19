@@ -1152,3 +1152,19 @@ h1 {
 #news .news-list::-webkit-scrollbar-track {
   background: transparent;
 }
+
+/* Cat portrait surprise: retains existing portrait sizing. */
+.portrait-swap { position:relative; display:grid; width:250px; max-width:100%; border-radius:50%; }
+.portrait-area .portrait-swap > .portrait,
+.portrait-area .portrait-swap > .portrait-placeholder { grid-area:1 / 1; width:100%; height:auto; aspect-ratio:1; object-fit:cover; border-radius:50%; transition:opacity .2s ease; }
+.portrait-swap .portrait-cat { opacity:0; pointer-events:none; }
+.portrait-swap .portrait-caption { position:absolute; top:100%; left:50%; transform:translateX(-50%); width:max-content; margin:12px 0 0; color:var(--accent); font-family:var(--serif); font-size:18px; line-height:1.4; font-style:italic; opacity:0; visibility:hidden; pointer-events:none; transition:opacity .2s ease; }
+.portrait-swap:hover .portrait-cat,
+.portrait-swap:focus-visible .portrait-cat { opacity:1; }
+.portrait-swap:hover .portrait-original,
+.portrait-swap:focus-visible .portrait-original { opacity:0; }
+.portrait-swap:hover .portrait-caption,
+.portrait-swap:focus-visible .portrait-caption { opacity:1; visibility:visible; }
+.portrait-swap:focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
+@media(max-width:650px) { .portrait-swap { width:80px; } .portrait-swap .portrait-caption { left:auto; right:0; transform:none; font-size:13px; margin-top:8px; } }
+@media(prefers-reduced-motion:reduce) { .portrait-area .portrait-swap > .portrait,.portrait-swap .portrait-caption { transition:none; } }

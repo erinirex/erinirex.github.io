@@ -33,7 +33,11 @@
     <main id="main">
       <section class="hero" id="home" aria-labelledby="name">
         <div class="portrait-area">
-          {% if p.portrait and p.portrait != empty %}<img class="portrait" src="{{ p.portrait | relative_url }}" alt="{{ p.portrait_alt | escape }}" width="300" height="300" fetchpriority="high">{% else %}<div class="portrait-placeholder" role="img" aria-label="Portrait not yet added">SX</div>{% endif %}
+          <div class="portrait-swap" tabindex="0" aria-label="Portrait of Shujun Xia. Hover or focus to reveal a cat.">
+            {% if p.portrait and p.portrait != empty %}<img class="portrait portrait-original" src="{{ p.portrait | relative_url }}" alt="{{ p.portrait_alt | escape }}" width="300" height="300" fetchpriority="high">{% else %}<div class="portrait-placeholder portrait-original">SX</div>{% endif %}
+            <img class="portrait portrait-cat" src="{{ '/images/photo_cat.jpg' | relative_url }}" alt="" aria-hidden="true" width="300" height="300">
+            <p class="portrait-caption">We need more cats!</p>
+          </div>
         </div>
         <div class="hero-copy">
           <p class="eyebrow">{{ p.eyebrow | escape }}</p>
