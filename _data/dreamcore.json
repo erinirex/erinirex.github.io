@@ -36,8 +36,25 @@
   ],
   "closing": "Somewhere between a thought and a dream.",
   "footer": "Made of curiosity & a little daydreaming.",
-  "experience": [],
-  "service": [],
+  "experience": [
+    {
+      "date": "2026",
+      "role": "Creator",
+      "organization": "Here",
+      "url": "https://erinirex.github.io/here/",
+      "logo": "images/logo-here.png",
+      "logo_alt": "Here logo",
+      "detail": "A rights-advocacy platform for sexual harassment and violence survivors."
+    }
+  ],
+  "service": [
+    {
+      "date": "2025",
+      "title": "Reviewer",
+      "url": "https://neurips.cc/",
+      "detail": "Responsible Foundation Model Workshop at NeurIPS 2025"
+    }
+  ],
   "misc": [
     {
       "title": "my little airport",

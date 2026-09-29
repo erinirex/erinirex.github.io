@@ -611,9 +611,20 @@ h1 {
   gap: 20px;
   margin-bottom: 24px;
 }
+.experience-entry.has-logo {
+  grid-template-columns: 110px 64px 1fr;
+  align-items: start;
+}
 .experience-entry:last-child,
 .service-entry:last-child {
   margin-bottom: 0;
+}
+.experience-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 10px 24px var(--shadow);
 }
 .organization {
   color: var(--accent);
@@ -698,6 +709,13 @@ h1 {
   .service-entry {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+  .experience-entry.has-logo {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 10px 14px;
+  }
+  .experience-entry.has-logo .entry-date {
+    grid-column: 1 / -1;
   }
 }
 
@@ -1086,6 +1104,18 @@ h1 {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 5px;
+  }
+  .experience-entry.has-logo {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 10px 12px;
+  }
+  .experience-entry.has-logo .entry-date {
+    grid-column: 1 / -1;
+  }
+  .experience-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
   }
 
   .publication-list .paper {
