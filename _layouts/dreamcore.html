@@ -26,7 +26,7 @@
     <header class="header">
       <a class="wordmark" href="#home" aria-label="Back to top"><span aria-hidden="true">🍧</span> {{ p.name | escape }}<i> / home</i></a>
       <nav aria-label="Main navigation">
-        <a href="#news">News</a><a href="#education">Education</a><a href="#publication">Publication</a><a href="#awards">Awards</a><a href="#experience">Experience</a><a href="#service">Service</a><a href="#misc">Misc</a>
+        <a href="#news">News</a><a href="#education">Education</a><a href="#publication">Publication</a><a href="#awards">Scholarships & Awards</a><a href="#experience">Experience</a><a href="#service">Service & Volunteer</a><a href="#misc">Misc</a>
       </nav>
       <button class="dream-toggle" type="button" aria-pressed="false" aria-label="Switch to dusk palette"><span aria-hidden="true">☾</span><span class="mode-label">Dusk</span></button>
     </header>
@@ -283,7 +283,7 @@
         <div class="section-body">{% for item in p.experience %}<article class="experience-entry{% if item.logo %} has-logo{% endif %}"><span class="entry-date">{{ item.date | escape }}</span>{% if item.logo %}<img class="experience-logo" src="{{ item.logo | relative_url }}" alt="{{ item.logo_alt | default: item.organization | escape }}">{% endif %}<div><h3>{{ item.role | escape }}</h3><p class="organization">{% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.organization | escape }}</a>{% else %}{{ item.organization | escape }}{% endif %}</p><p>{{ item.detail | escape }}</p></div></article>{% else %}<p class="empty-copy">More to share soon.</p>{% endfor %}</div>
       </section>
       <section id="service" class="content-section">
-        <div class="section-heading"><p class="eyebrow">GIVING BACK</p><h2>Service</h2></div>
+        <div class="section-heading"><p class="eyebrow">GIVING BACK</p><h2>Service & Volunteer</h2></div>
         <div class="section-body">{% for item in p.service %}<article class="service-entry"><span class="entry-date">{{ item.date | escape }}</span><div><h3>{% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>{% else %}{{ item.title | escape }}{% endif %}</h3><p>{{ item.detail | escape }}</p></div></article>{% else %}<p class="empty-copy">More to share soon.</p>{% endfor %}</div>
       </section>
       <section id="misc" class="content-section">
