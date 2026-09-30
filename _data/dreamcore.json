@@ -3,7 +3,7 @@
   "subtitle": "You can call me Erin.",
   "description": "Shujun Xia (Erin), a senior studying Computer Science at Columbia University.",
   "eyebrow": "PERSONAL SPACE",
-  "intro": "I'm a senior at Columbia University and CityUHK studying Computer Science. Welcome to my little corner of the internet.",
+  "intro": "I'm a senior at Columbia University and City University of Hong Kong studying Computer Science. Welcome to my little corner of the internet.",
   "about": "I'm Shujun Xia, also known as Erin. I'm currently a senior studying Computer Science at Columbia University. This space brings together my work, ideas, and the things I'm exploring along the way.",
   "interests": ["Columbia University", "Computer Science", "Senior"],
   "email": "sx2394@columbia.edu",
@@ -84,6 +84,11 @@
       "date": "2025",
       "title": "Reviewer",
       "detail": "Responsible Foundation Model Workshop at NeurIPS 2025"
+    },
+    {
+      "date": "2024-2025",
+      "title": "Committee Member",
+      "detail": "Computer Science Student Chapter, City University of Hong Kong"
     }
   ],
   "misc": [
