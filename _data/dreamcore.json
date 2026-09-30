@@ -20,8 +20,14 @@
       "date": "Present",
       "school": "Columbia University",
       "detail": "B.A. · Computer Science · Expect to graduate 2027/05"
+    },
+    {
+      "date": "Present",
+      "school": "City University of Hong Kong",
+      "detail": "B.S. · Computer Science · Expect to graduate 2027/05"
     }
   ],
+  
   "awards": [
     {
       "date": "2026",
