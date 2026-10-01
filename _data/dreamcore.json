@@ -62,13 +62,19 @@
   "footer": "Made of curiosity & a little daydreaming.",
   "experience": [
     {
-      "date": "2026",
+      "date": "2026-Present",
       "role": "Creator",
       "organization": "Here",
       "url": "https://erinirex.github.io/here/",
       "logo": "images/logo-here.png",
       "logo_alt": "Here logo",
       "detail": "A rights-advocacy platform for sexual harassment and violence survivors."
+    },
+    {
+      "date": "2026-Present",
+      "role": "Research Intern",
+      "organization": "Columbia University",
+      "detail": "Advised by Prof. Micah Goldblum and Prof. Adam Block."
     },
     {
       "date": "2025-2026",
