@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/dreamcore.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/dreamcore.css' | relative_url }}?v=20261001-story-image">
   <script src="{{ '/assets/js/dreamcore.js' | relative_url }}" defer></script>
 </head>
 <body>
@@ -288,9 +288,10 @@
           <article class="service-entry{% if item.image %} service-with-image{% endif %}">
             <span class="entry-date">{{ item.date | escape }}</span>
             <div class="service-content">
-              {% if item.image %}<a class="service-image-link" href="{{ item.url | escape }}"><img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | escape }}" loading="lazy"></a>{% endif %}
+              
               <div class="service-description">
                 <h3>{% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>{% else %}{{ item.title | escape }}{% endif %}</h3>
+                {% if item.image %}<a class="service-image-link" href="{{ item.url | escape }}"><img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | escape }}" loading="lazy"></a>{% endif %}
                 <p>{% if item.detail_link_text and item.url %}{% assign detail_parts = item.detail | split: item.detail_link_text %}{% for part in detail_parts %}{{ part | escape }}{% unless forloop.last %}<a class="service-story-link" href="{{ item.url | escape }}">{{ item.detail_link_text | escape }}</a>{% endunless %}{% endfor %}{% else %}{{ item.detail | escape }}{% endif %}</p>
               </div>
             </div>

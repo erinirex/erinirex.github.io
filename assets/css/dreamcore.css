@@ -1199,14 +1199,11 @@ h1 {
 @media(max-width:650px) { .portrait-swap { width:80px; } .portrait-swap .portrait-caption { left:auto; right:0; transform:none; font-size:13px; margin-top:8px; } }
 @media(prefers-reduced-motion:reduce) { .portrait-area .portrait-swap > .portrait,.portrait-swap .portrait-caption { transition:none; } }
 
-/* Collaboratory: linked image on the left, theme-colored links. */
-.service-with-image .service-content { display:grid; grid-template-columns:120px minmax(0,1fr); gap:18px; align-items:start; }
-.service-image-link { display:block; }
-.service-image-link { width:120px; max-width:100%; }
-.service-image-link img { display:block; width:100%; max-width:120px; height:auto; object-fit:contain; }
-.service-description { min-width:0; }
-.service-with-image .service-description a { color:var(--accent); }
-.service-story-link { text-decoration:underline; text-underline-offset:3px; }
-@media(max-width:650px) { .service-with-image .service-content { grid-template-columns:90px minmax(0,1fr); gap:14px; } }
-@media(max-width:360px) { .service-with-image .service-content { grid-template-columns:80px minmax(0,1fr); gap:12px; } }
-
+/* Collaboratory: proportional image beneath the title. */
+#service .service-with-image .service-content { display:block; min-width:0; }
+#service .service-description { min-width:0; }
+#service .service-with-image .service-image-link { display:block; width:20%; max-width:120px; margin:12px 0 14px; }
+#service .service-with-image .service-image-link img { display:block; width:100%; max-width:100%; height:auto; object-fit:contain; }
+#service .service-with-image .service-description a { color:var(--accent); }
+#service .service-story-link { text-decoration:underline; text-underline-offset:3px; }
+@media(max-width:650px) { #service .service-with-image .service-image-link { width:35%; max-width:110px; } }
