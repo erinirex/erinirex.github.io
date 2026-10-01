@@ -1200,11 +1200,13 @@ h1 {
 @media(prefers-reduced-motion:reduce) { .portrait-area .portrait-swap > .portrait,.portrait-swap .portrait-caption { transition:none; } }
 
 /* Collaboratory: linked image on the left, theme-colored links. */
-.service-with-image .service-content { display:grid; grid-template-columns:160px minmax(0,1fr); gap:20px; align-items:start; }
+.service-with-image .service-content { display:grid; grid-template-columns:120px minmax(0,1fr); gap:18px; align-items:start; }
 .service-image-link { display:block; }
-.service-image-link img { display:block; width:100%; height:auto; }
+.service-image-link { width:120px; max-width:100%; }
+.service-image-link img { display:block; width:100%; max-width:120px; height:auto; object-fit:contain; }
 .service-description { min-width:0; }
 .service-with-image .service-description a { color:var(--accent); }
 .service-story-link { text-decoration:underline; text-underline-offset:3px; }
-@media(max-width:650px) { .service-with-image .service-content { grid-template-columns:100px minmax(0,1fr); gap:14px; } }
+@media(max-width:650px) { .service-with-image .service-content { grid-template-columns:90px minmax(0,1fr); gap:14px; } }
 @media(max-width:360px) { .service-with-image .service-content { grid-template-columns:80px minmax(0,1fr); gap:12px; } }
+
