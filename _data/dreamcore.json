@@ -5,7 +5,11 @@
   "eyebrow": "PERSONAL SPACE",
   "intro": "I'm a senior at Columbia University and City University of Hong Kong studying Computer Science. Welcome to my little corner of the internet.",
   "about": "I'm Shujun Xia, also known as Erin. I'm currently a senior studying Computer Science at Columbia University. This space brings together my work, ideas, and the things I'm exploring along the way.",
-  "interests": ["Columbia University", "Computer Science", "Senior"],
+  "interests": [
+    "Columbia University",
+    "Computer Science",
+    "Senior"
+  ],
   "email": "sx2394@columbia.edu",
   "github": "https://github.com/erinirex",
   "x": "https://twitter.com/erinirex",
@@ -27,7 +31,6 @@
       "detail": "B.S. · Computer Science · Expect to graduate 2027/05"
     }
   ],
-  
   "awards": [
     {
       "date": "2026",
@@ -93,9 +96,12 @@
     {
       "date": "2023",
       "title": "Global Columbia Collaboratory: Retelling the Story of Waste",
-      "detail": "Collaborated with international college students and an NGO supporting Indian women survivors of a chemical disaster; created a published story map raising awareness of plastic waste and women’s empowerment."
+      "detail": "Collaborated with international college students and an NGO supporting Indian women survivors of a chemical disaster; created a published story map raising awareness of plastic waste and women’s empowerment.",
+      "url": "https://global.undergrad.columbia.edu/gcc/global-columbia-collaboratory-spring-2023/women%E2%80%99s-empowerment-msk-spring-2023",
+      "image": "/images/collaboratory.png",
+      "image_alt": "Global Columbia Collaboratory: Retelling the Story of Waste",
+      "detail_link_text": "published story map"
     }
-
   ],
   "misc": [
     {

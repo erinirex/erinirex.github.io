@@ -284,7 +284,18 @@
       </section>
       <section id="service" class="content-section">
         <div class="section-heading"><p class="eyebrow">GIVING BACK</p><h2>Service & Volunteer</h2></div>
-        <div class="section-body">{% for item in p.service %}<article class="service-entry"><span class="entry-date">{{ item.date | escape }}</span><div><h3>{% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>{% else %}{{ item.title | escape }}{% endif %}</h3><p>{{ item.detail | escape }}</p></div></article>{% else %}<p class="empty-copy">More to share soon.</p>{% endfor %}</div>
+        <div class="section-body">{% for item in p.service %}
+          <article class="service-entry{% if item.image %} service-with-image{% endif %}">
+            <span class="entry-date">{{ item.date | escape }}</span>
+            <div class="service-content">
+              {% if item.image %}<a class="service-image-link" href="{{ item.url | escape }}"><img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | escape }}" loading="lazy"></a>{% endif %}
+              <div class="service-description">
+                <h3>{% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>{% else %}{{ item.title | escape }}{% endif %}</h3>
+                <p>{% if item.detail_link_text and item.url %}{% assign detail_parts = item.detail | split: item.detail_link_text %}{% for part in detail_parts %}{{ part | escape }}{% unless forloop.last %}<a class="service-story-link" href="{{ item.url | escape }}">{{ item.detail_link_text | escape }}</a>{% endunless %}{% endfor %}{% else %}{{ item.detail | escape }}{% endif %}</p>
+              </div>
+            </div>
+          </article>
+        {% else %}<p class="empty-copy">More to share soon.</p>{% endfor %}</div>
       </section>
       <section id="misc" class="content-section">
         <div class="section-heading"><p class="eyebrow">OUTSIDE THE LINES</p><h2>Misc</h2></div>
