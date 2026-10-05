@@ -303,16 +303,10 @@
         <div class="section-body">{% for item in p.misc %}<article class="misc-entry"><h3>{% if item.url %}<a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>{% else %}{{ item.title | escape }}{% endif %}</h3><p>{{ item.text | escape }}</p></article>{% else %}<p class="empty-copy">A little space for life beyond computer science. More soon.</p>{% endfor %}</div>
       </section>
     </main>
-    <!-- <aside class="visitors" aria-labelledby="visitors-title">
-      <div><p class="eyebrow">FROM NEAR & FAR</p><h2 id="visitors-title">Visitors</h2><p class="visitor-caption">Visits and places around the world.</p></div>
-      <div class="visitor-map">
-        {% capture visitor_embed %}{% include dreamcore-visitors.html %}{% endcapture %}
-        {% assign visitor_embed = visitor_embed | strip %}
-        {% if visitor_embed != empty %}<div class="visitor-widget">{{ visitor_embed }}</div><p class="visitor-note"></p>{% else %}<p class="empty-copy">Visitor statistics are not available yet.</p>{% endif %}
-      </div>
-    </aside> -->
     <footer><span>© {{ site.time | date: '%Y' }} {{ p.name | escape }}</span><i>{{ p.footer | escape }}</i><a href="#home">Back to the sky ↑</a></footer>
   </div>
+  {% include dreamcore-visitors.html %}
 </body>
 </html>
+
 
