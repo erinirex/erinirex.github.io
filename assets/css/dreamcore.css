@@ -1183,6 +1183,17 @@ h1 {
   background: transparent;
 }
 
+@media (min-width: 901px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 250px;
+    gap: 40px;
+  }
+
+  .hero .intro {
+    max-width: none;
+  }
+}
+
 /* Cat portrait surprise: retains existing portrait sizing. */
 .portrait-swap { position:relative; display:grid; width:250px; max-width:100%; border-radius:50%; }
 .portrait-area .portrait-swap > .portrait,
