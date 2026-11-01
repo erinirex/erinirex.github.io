@@ -1207,3 +1207,8 @@ h1 {
 #service .service-with-image .service-description a { color:var(--accent); }
 #service .service-story-link { text-decoration:underline; text-underline-offset:3px; }
 @media(max-width:650px) { #service .service-with-image .service-image-link { width:35%; max-width:110px; } }
+
+/* Conference and research-topic labels. */
+.paper-tags { display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; }
+.paper-tags .venue-tag { margin:0; }
+.topic-tag { display:inline-block; padding:3px 10px; border:1px solid var(--line); border-radius:4px; background:var(--panel); color:var(--accent); font-size:14px; line-height:1.4; }
